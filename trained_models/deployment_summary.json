@@ -1,0 +1,55 @@
+{
+  "project": "Company Sales Forecasting",
+  "created_date": "2025-09-06T11:55:58.517830",
+  "best_models": {
+    "total_units": {
+      "algorithm": "RF",
+      "filename": "trained_models/best_total_units_model_rf.joblib",
+      "test_r2": -0.6998482750634349,
+      "test_rmse": 8147.476872013814,
+      "test_mae": 5682.266666666667,
+      "description": "Total Units Sold"
+    },
+    "total_profit": {
+      "algorithm": "RF",
+      "filename": "trained_models/best_total_profit_model_rf.joblib",
+      "test_r2": -0.6998482750634347,
+      "test_rmse": 81474.76872013813,
+      "test_mae": 56822.666666666664,
+      "description": "Total Profit"
+    },
+    "facecream": {
+      "algorithm": "XGB",
+      "filename": "trained_models/best_facecream_model_xgb.joblib",
+      "test_r2": -0.5725487165258403,
+      "test_rmse": 469.9900811520704,
+      "test_mae": 399.8109537760417,
+      "description": "Face Cream Sales"
+    },
+    "moisturizer": {
+      "algorithm": "LR",
+      "filename": "trained_models/best_moisturizer_model_lr.joblib",
+      "test_r2": -0.2065367865586445,
+      "test_rmse": 153.86660763511887,
+      "test_mae": 152.1636309944062,
+      "description": "Moisturizer Sales"
+    },
+    "profit_per_unit": {
+      "algorithm": "LR",
+      "filename": "trained_models/best_profit_per_unit_model_lr.joblib",
+      "test_r2": 1.0,
+      "test_rmse": 0.0,
+      "test_mae": 0.0,
+      "description": "Profit Efficiency"
+    }
+  },
+  "feature_scaler": "trained_models/feature_scaler.joblib",
+  "feature_info": "trained_models/feature_info.json",
+  "model_performance_summary": {
+    "LR": -1.2952633425983904,
+    "LSTM": -39.87330926441142,
+    "RF": -1.546584436387858,
+    "SVR": -4.694261507208519,
+    "XGB": -0.7673782301838398
+  }
+}

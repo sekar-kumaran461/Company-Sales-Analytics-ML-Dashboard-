@@ -1,0 +1,222 @@
+# Company Sales Analytics - Requirements
+# ==============================================
+# 
+# This file contains all Python dependencies required for the
+# Company Sales Data Analytics portfolio project.
+# 
+# Installation: pip install -r requirements.txt
+# Python Version: 3.8+
+
+# ================================
+# CORE DATA SCIENCE LIBRARIES
+# ================================
+
+# Data Manipulation and Analysis
+pandas>=1.5.0                    # Essential for data manipulation and analysis
+numpy>=1.21.0                    # Numerical computing foundation
+
+# Statistical Analysis
+scipy>=1.9.0                     # Advanced statistical functions and tests
+
+# ================================
+# VISUALIZATION LIBRARIES
+# ================================
+
+# Static Plotting
+matplotlib>=3.5.0                # Publication-quality static plots
+seaborn>=0.11.0                  # Statistical visualization enhancement
+
+# Interactive Visualization
+plotly>=5.10.0                   # Interactive charts and dashboards
+plotly-express>=0.4.1            # High-level Plotly interface
+
+# ================================
+# MACHINE LEARNING FRAMEWORKS
+# ================================
+
+# Traditional Machine Learning
+scikit-learn>=1.1.0              # Comprehensive ML library for classification/regression
+xgboost>=1.6.0                   # High-performance gradient boosting
+
+# Deep Learning (Optional but Recommended)
+tensorflow>=2.9.0                # Deep learning framework for LSTM models
+keras>=2.9.0                     # High-level neural network API
+
+# Alternative Deep Learning (if TensorFlow unavailable)
+# torch>=1.12.0                  # PyTorch for deep learning
+# torchvision>=0.13.0            # Computer vision support
+
+# ================================
+# WEB APPLICATION FRAMEWORK
+# ================================
+
+# Interactive Dashboard
+streamlit>=1.12.0                # Web app framework for data science
+streamlit-plotly-events>=0.0.6   # Enhanced Plotly integration
+
+# ================================
+# MODEL DEPLOYMENT & PERSISTENCE
+# ================================
+
+# Model Saving and Loading
+joblib>=1.1.0                    # Efficient model persistence
+pickle5>=0.0.11                  # Enhanced pickle for compatibility
+
+# ================================
+# DEVELOPMENT & PRODUCTIVITY
+# ================================
+
+# Jupyter Environment
+jupyter>=1.0.0                   # Interactive notebook environment
+notebook>=6.4.0                  # Jupyter notebook interface
+ipython>=8.0.0                   # Enhanced Python interpreter
+
+# Progress Tracking
+tqdm>=4.64.0                     # Progress bars for long-running operations
+
+# ================================
+# DATA QUALITY & VALIDATION
+# ================================
+
+# Data Validation
+pydantic>=1.9.0                  # Data validation and settings management
+
+# ================================
+# TESTING & QUALITY ASSURANCE
+# ================================
+
+# Testing Framework
+pytest>=7.0.0                    # Testing framework for code validation
+pytest-cov>=3.0.0                # Coverage testing
+
+# ================================
+# OPTIONAL ENHANCEMENTS
+# ================================
+
+# Advanced Time Series
+# prophet>=1.1.0                 # Facebook Prophet for time series forecasting
+# statsmodels>=0.13.0            # Statistical modeling extensions
+
+# Natural Language Processing (for text analysis)
+# nltk>=3.7.0                    # Natural language toolkit
+# textblob>=0.17.1               # Simplified text processing
+
+# Advanced Visualization
+# bokeh>=2.4.0                   # Interactive visualization alternative
+# altair>=4.2.0                  # Grammar of graphics visualization
+
+# Database Connectivity
+# sqlalchemy>=1.4.0              # SQL toolkit and ORM
+# psycopg2-binary>=2.9.0         # PostgreSQL adapter
+# pymongo>=4.1.0                 # MongoDB driver
+
+# Cloud Integration
+# boto3>=1.24.0                  # AWS SDK for Python
+# google-cloud-storage>=2.4.0    # Google Cloud Storage
+# azure-storage-blob>=12.12.0    # Azure Blob Storage
+
+# Performance Optimization
+# numba>=0.56.0                  # JIT compiler for numerical functions
+# dask>=2022.6.0                 # Parallel computing library
+
+# ================================
+# ENVIRONMENT & CONFIGURATION
+# ================================
+
+# Environment Management
+python-dotenv>=0.20.0            # Environment variable management
+
+# Configuration
+pyyaml>=6.0                      # YAML configuration file support
+configparser>=5.2.0              # Configuration file parser
+
+# ================================
+# SECURITY & AUTHENTICATION
+# ================================
+
+# Security
+cryptography>=37.0.0             # Cryptographic recipes and primitives
+
+# ================================
+# DOCUMENTATION & REPORTING
+# ================================
+
+# Report Generation
+fpdf>=2.5.0                      # PDF generation
+openpyxl>=3.0.0                  # Excel file handling
+
+# ================================
+# VERSION COMPATIBILITY NOTES
+# ================================
+
+# Python 3.8+ Compatibility:
+# - All specified versions are compatible with Python 3.8+
+# - For Python 3.7, consider downgrading some packages
+# - For Python 3.10+, latest versions are recommended
+
+# Apple Silicon (M1/M2) Users:
+# - Use conda for TensorFlow installation: conda install tensorflow
+# - Some packages may require compilation: install Xcode Command Line Tools
+
+# Windows Users:
+# - Install Microsoft Visual C++ Build Tools if compilation errors occur
+# - Consider using Anaconda for easier package management
+
+# Linux Users:
+# - Ensure system libraries are installed (python3-dev, build-essential)
+# - Use package manager for system-level dependencies
+
+# ================================
+# INSTALLATION INSTRUCTIONS
+# ================================
+
+# Standard Installation:
+# pip install -r requirements.txt
+
+# Development Installation (with optional packages):
+# pip install -r requirements.txt
+# pip install pytest pytest-cov prophet statsmodels
+
+# Conda Alternative:
+# conda install --file requirements.txt
+# conda install -c conda-forge plotly streamlit xgboost
+
+# Docker Installation:
+# FROM python:3.9-slim
+# COPY requirements.txt .
+# RUN pip install -r requirements.txt
+
+# ================================
+# TROUBLESHOOTING COMMON ISSUES
+# ================================
+
+# Issue: TensorFlow installation fails
+# Solution: pip install tensorflow-cpu (for CPU-only version)
+
+# Issue: XGBoost compilation errors
+# Solution: conda install xgboost (use conda instead of pip)
+
+# Issue: Plotly not displaying in Jupyter
+# Solution: jupyter labextension install jupyterlab-plotly
+
+# Issue: Streamlit not starting
+# Solution: Check firewall settings, use --server.port 8502 for alternative port
+
+# ================================
+# PERFORMANCE OPTIMIZATION TIPS
+# ================================
+
+# For Large Datasets:
+# - Install dask for parallel computing
+# - Use modin for faster pandas operations
+# - Consider ray for distributed computing
+
+# For GPU Acceleration:
+# - Install tensorflow-gpu instead of tensorflow
+# - Install cudf for GPU-accelerated pandas
+# - Use RAPIDS ecosystem for GPU data science
+
+# Memory Optimization:
+# - Use pandas categorical data types
+# - Implement chunking for large file processing
+# - Monitor memory usage with memory_profiler
