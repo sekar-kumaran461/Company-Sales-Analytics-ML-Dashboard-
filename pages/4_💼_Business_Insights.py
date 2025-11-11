@@ -84,7 +84,11 @@ st.markdown("""
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('company_sales_data.csv')
+    import os
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(current_dir)
+    csv_path = os.path.join(parent_dir, 'company_sales_data.csv')
+    df = pd.read_csv(csv_path)
     df['profit_per_unit'] = df['total_profit'] / df['total_units']
     df['month'] = df['month_number']
     seasons = {1: 'Winter', 2: 'Winter', 3: 'Spring', 4: 'Spring', 5: 'Spring',

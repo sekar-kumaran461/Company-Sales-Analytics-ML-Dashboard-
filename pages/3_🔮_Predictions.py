@@ -70,13 +70,18 @@ st.markdown("""
 @st.cache_resource
 def load_models():
     try:
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)
+        models_dir = os.path.join(parent_dir, 'trained_models')
+        
         models = {}
-        models['total_units'] = joblib.load('trained_models/best_total_units_model_rf.joblib')
-        models['total_profit'] = joblib.load('trained_models/best_total_profit_model_rf.joblib')
-        models['facecream'] = joblib.load('trained_models/best_facecream_model_xgb.joblib')
-        models['moisturizer'] = joblib.load('trained_models/best_moisturizer_model_lr.joblib')
-        models['profit_per_unit'] = joblib.load('trained_models/best_profit_per_unit_model_lr.joblib')
-        models['scaler'] = joblib.load('trained_models/feature_scaler.joblib')
+        models['total_units'] = joblib.load(os.path.join(models_dir, 'best_total_units_model_rf.joblib'))
+        models['total_profit'] = joblib.load(os.path.join(models_dir, 'best_total_profit_model_rf.joblib'))
+        models['facecream'] = joblib.load(os.path.join(models_dir, 'best_facecream_model_xgb.joblib'))
+        models['moisturizer'] = joblib.load(os.path.join(models_dir, 'best_moisturizer_model_lr.joblib'))
+        models['profit_per_unit'] = joblib.load(os.path.join(models_dir, 'best_profit_per_unit_model_lr.joblib'))
+        models['scaler'] = joblib.load(os.path.join(models_dir, 'feature_scaler.joblib'))
         
         return models
     except Exception as e:
@@ -86,7 +91,12 @@ def load_models():
 @st.cache_data
 def load_feature_info():
     try:
-        with open('trained_models/feature_info.json', 'r') as f:
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)
+        feature_path = os.path.join(parent_dir, 'trained_models', 'feature_info.json')
+        
+        with open(feature_path, 'r') as f:
             return json.load(f)
     except Exception as e:
         st.error(f"Error loading feature info: {str(e)}")
@@ -95,7 +105,11 @@ def load_feature_info():
 @st.cache_data
 def load_historical_data():
     try:
-        return pd.read_csv('company_sales_data.csv')
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)
+        csv_path = os.path.join(parent_dir, 'company_sales_data.csv')
+        return pd.read_csv(csv_path)
     except Exception as e:
         st.error(f"Error loading data: {str(e)}")
         return None

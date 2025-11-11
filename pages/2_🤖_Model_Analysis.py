@@ -71,10 +71,17 @@ st.markdown("""
 @st.cache_data
 def load_model_info():
     try:
-        with open('trained_models/deployment_summary.json', 'r') as f:
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)
+        
+        deployment_path = os.path.join(parent_dir, 'trained_models', 'deployment_summary.json')
+        feature_path = os.path.join(parent_dir, 'trained_models', 'feature_info.json')
+        
+        with open(deployment_path, 'r') as f:
             deployment_info = json.load(f)
         
-        with open('trained_models/feature_info.json', 'r') as f:
+        with open(feature_path, 'r') as f:
             feature_info = json.load(f)
         
         return deployment_info, feature_info
