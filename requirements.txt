@@ -38,9 +38,9 @@ plotly-express>=0.4.1            # High-level Plotly interface
 scikit-learn>=1.1.0              # Comprehensive ML library for classification/regression
 xgboost>=1.6.0                   # High-performance gradient boosting
 
-# Deep Learning (Optional but Recommended)
-tensorflow>=2.9.0                # Deep learning framework for LSTM models
-keras>=2.9.0                     # High-level neural network API
+# Deep Learning (Optional - Commented out for Streamlit Cloud)
+# tensorflow>=2.9.0              # Deep learning framework for LSTM models
+# keras>=2.9.0                   # High-level neural network API
 
 # Alternative Deep Learning (if TensorFlow unavailable)
 # torch>=1.12.0                  # PyTorch for deep learning
@@ -60,16 +60,16 @@ streamlit-plotly-events>=0.0.6   # Enhanced Plotly integration
 
 # Model Saving and Loading
 joblib>=1.1.0                    # Efficient model persistence
-pickle5>=0.0.11                  # Enhanced pickle for compatibility
+# pickle5>=0.0.11                # Enhanced pickle for compatibility (not needed for Python 3.8+)
 
 # ================================
 # DEVELOPMENT & PRODUCTIVITY
 # ================================
 
-# Jupyter Environment
-jupyter>=1.0.0                   # Interactive notebook environment
-notebook>=6.4.0                  # Jupyter notebook interface
-ipython>=8.0.0                   # Enhanced Python interpreter
+# Jupyter Environment (Optional - Commented out for Streamlit Cloud)
+# jupyter>=1.0.0                 # Interactive notebook environment
+# notebook>=6.4.0                # Jupyter notebook interface
+# ipython>=8.0.0                 # Enhanced Python interpreter
 
 # Progress Tracking
 tqdm>=4.64.0                     # Progress bars for long-running operations
@@ -85,9 +85,9 @@ pydantic>=1.9.0                  # Data validation and settings management
 # TESTING & QUALITY ASSURANCE
 # ================================
 
-# Testing Framework
-pytest>=7.0.0                    # Testing framework for code validation
-pytest-cov>=3.0.0                # Coverage testing
+# Testing Framework (Optional - Commented out for Streamlit Cloud)
+# pytest>=7.0.0                  # Testing framework for code validation
+# pytest-cov>=3.0.0              # Coverage testing
 
 # ================================
 # OPTIONAL ENHANCEMENTS
@@ -142,7 +142,7 @@ cryptography>=37.0.0             # Cryptographic recipes and primitives
 # ================================
 
 # Report Generation
-fpdf>=2.5.0                      # PDF generation
+# fpdf2>=2.5.0                   # PDF generation (optional)
 openpyxl>=3.0.0                  # Excel file handling
 
 # ================================
